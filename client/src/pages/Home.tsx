@@ -13,6 +13,8 @@ import {
   X,
 } from "lucide-react";
 
+const asset = (name: string) => `${import.meta.env.BASE_URL}menu/${name}`;
+
 type Category = "الكل" | "الفطار" | "الأطباق الرئيسية" | "المشويات" | "الأسماك" | "المشروبات";
 
 type MenuImage = {
@@ -27,7 +29,7 @@ type MenuImage = {
 const menuImages: MenuImage[] = [
   {
     id: 1,
-    src: "/manus-storage/01_192a709e.jpg",
+    src: asset("01.jpg"),
     title: "قائمة المشروبات",
     category: "المشروبات",
     description: "عصائر طازجة، موهيتو، قهوة ومشروبات باردة",
@@ -35,7 +37,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 2,
-    src: "/manus-storage/02_36fd4883.jpg",
+    src: asset("02.jpg"),
     title: "الفطار",
     category: "الفطار",
     description: "وجبات الفطار الشرقي والبيض والطواجن",
@@ -43,7 +45,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 3,
-    src: "/manus-storage/03_9cef24fb.jpg",
+    src: asset("03.jpg"),
     title: "مشروبات ساخنة وباردة",
     category: "المشروبات",
     description: "سموزي، عصائر، شاي وقهوة",
@@ -51,7 +53,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 4,
-    src: "/manus-storage/04_4885a786.jpg",
+    src: asset("04.jpg"),
     title: "الولائم والوجبات العائلية",
     category: "الأطباق الرئيسية",
     description: "اختيارات العائلة والوجبات الكبيرة",
@@ -59,7 +61,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 5,
-    src: "/manus-storage/05_db6c4421.jpg",
+    src: asset("05.jpg"),
     title: "المشويات",
     category: "المشويات",
     description: "مشويات مشكلة، كباب، كفتة وشيش طاووق",
@@ -67,7 +69,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 6,
-    src: "/manus-storage/06_3fd29de4.jpg",
+    src: asset("06.jpg"),
     title: "الأرز وصيد اليوم",
     category: "الأسماك",
     description: "أرز مصري وصيادية وأسماك مختارة",
@@ -75,7 +77,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 7,
-    src: "/manus-storage/07_92ce2c8a.jpg",
+    src: asset("07.jpg"),
     title: "الأطباق الرئيسية",
     category: "الأطباق الرئيسية",
     description: "أطباق اللحوم والدجاج والطواجن",
@@ -83,7 +85,7 @@ const menuImages: MenuImage[] = [
   },
   {
     id: 8,
-    src: "/manus-storage/08_dfe26b5f.jpg",
+    src: asset("08.jpg"),
     title: "الركن الإيطالي",
     category: "الأطباق الرئيسية",
     description: "بيتزا ومكرونة وأطباق إيطالية",
@@ -147,7 +149,7 @@ export default function Home() {
       <header className="site-header">
         <div className="container nav-inner">
           <a className="brand" href="#top" aria-label="منيو مطعم الملك فاروق">
-            <img className="brand-logo" src="/manus-storage/logo-final_4c37ab1a.png" alt="شعار مطعم الملك فاروق" />
+            <img className="brand-logo" src={asset("logo.png")} alt="شعار مطعم الملك فاروق" />
             <span>
               <strong>الملك فاروق</strong>
               <small>مطعم وكافيه</small>
@@ -183,8 +185,8 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-art" aria-label="صور من المنيو">
-              <div className="hero-frame hero-frame-back"><img src="/manus-storage/05_db6c4421.jpg" alt="مشويات مطعم الملك فاروق" /></div>
-              <div className="hero-frame hero-frame-front"><img src="/manus-storage/07_92ce2c8a.jpg" alt="أطباق مطعم الملك فاروق" /></div>
+              <div className="hero-frame hero-frame-back"><img src={asset("05.jpg")} alt="مشويات مطعم الملك فاروق" /></div>
+              <div className="hero-frame hero-frame-front"><img src={asset("07.jpg")} alt="أطباق مطعم الملك فاروق" /></div>
               <div className="hero-stamp"><span>طعم</span><strong>أصيل</strong><small>منذ البداية</small></div>
             </div>
           </div>
@@ -234,7 +236,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="site-footer" id="contact"><div className="container footer-inner"><div className="brand footer-brand"><img className="brand-logo" src="/manus-storage/logo-final_4c37ab1a.png" alt="شعار مطعم الملك فاروق" /><span><strong>الملك فاروق</strong><small>مطعم وكافيه</small></span></div><p>طعم أصيل بجو على النيل</p><div className="footer-links"><a href="tel:01070633307">01070633307</a><a href="https://wa.me/201070633307" target="_blank" rel="noreferrer">واتساب</a></div></div></footer>
+      <footer className="site-footer" id="contact"><div className="container footer-inner"><div className="brand footer-brand"><img className="brand-logo" src={asset("logo.png")} alt="شعار مطعم الملك فاروق" /><span><strong>الملك فاروق</strong><small>مطعم وكافيه</small></span></div><p>طعم أصيل بجو على النيل</p><div className="footer-links"><a href="tel:01070633307">01070633307</a><a href="https://wa.me/201070633307" target="_blank" rel="noreferrer">واتساب</a></div></div></footer>
 
       {selected && <div className="lightbox" role="dialog" aria-modal="true" aria-label={selected.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setSelected(null); }}>
         <button className="lightbox-close" onClick={() => setSelected(null)} aria-label="إغلاق"><X size={22} /></button>
